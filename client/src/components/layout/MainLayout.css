@@ -1,0 +1,120 @@
+.main-layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  margin-left: 260px;
+  min-height: 100vh;
+  transition: margin-left 0.3s ease;
+}
+
+.page-content {
+  flex: 1;
+  padding: 1.5rem;
+  overflow-y: auto;
+}
+
+.sidebar-overlay {
+  display: none;
+}
+
+@media (max-width: 1024px) {
+  .main-content {
+    margin-left: 0;
+  }
+  
+  .sidebar-overlay {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 40;
+  }
+}
+
+/* Page Header Styles */
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.page-header h1 {
+  font-size: 1.75rem;
+  font-weight: 600;
+}
+
+.page-header p {
+  color: var(--text-secondary);
+  margin-top: 0.25rem;
+}
+
+/* Card Grid */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+/* Empty State */
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 2rem;
+  text-align: center;
+  color: var(--text-secondary);
+}
+
+.empty-state svg {
+  width: 64px;
+  height: 64px;
+  margin-bottom: 1rem;
+  opacity: 0.5;
+}
+
+.empty-state h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.empty-state p {
+  margin-bottom: 1.5rem;
+  max-width: 400px;
+}
+
+/* Loading State */
+.loading-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 300px;
+}
+
+@media (max-width: 768px) {
+  .page-content {
+    padding: 1rem;
+  }
+  
+  .page-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .page-header h1 {
+    font-size: 1.5rem;
+  }
+}
